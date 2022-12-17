@@ -1,5 +1,5 @@
-const http = require('http');
-const map = require('through2-map');
+const http = require('http');   //passed http module through const http.
+const map = require('through2-map');    //passed through2-map module through const map.
 
 const port = process.argv[2];
 

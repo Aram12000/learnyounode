@@ -38,16 +38,16 @@ const responses = [];
 const completed_req = 0;
 
 for(var i in url){
-    http.get(url[i], function(response){
-        var content = "";
+    http.get(url[i], function(response){    //Conactinate result with data.
+        let result = "";
         //if(completed_req== url.length){
-                response.setEncoding("utf-8");
+                response.setEncoding("utf-8");  //Data from response needs to be encoded with 'utf8' since it is buffer object.
                 response.on("data", function(data){
-                    content += data;
+                    result += data; //Conactinate result with data.
                 })
-                response.on("error", console.error);
+                response.on("error", console.error);    //Returns error in console if an error is encountered.
                 response.on("end", function(end){
-                    console.log(content);
+                    console.log(result);    //logs results itself.
                 });
 
     })
